@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ShopVibe - Modern E-Commerce Store</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo">
+        🛍️ Shop<span>Vibe</span>
+      </a>
+
+      <button class="nav-toggle" id="nav-toggle-btn" aria-label="Toggle navigation">
+        ☰
+      </button>
+
+      <ul class="nav-links" id="nav-links-menu">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li class="cart-link-wrapper">
+          <a href="cart.html" class="cart-icon-btn">
+            🛒 Cart <span class="cart-badge" id="nav-cart-count">0</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <div class="container">
+
+      <!-- Hero Banner -->
+      <section class="hero-banner">
+        <span class="hero-badge">Special Offers • Up to 40% Off</span>
+        <h1>Discover Premium Products at Unbeatable Prices</h1>
+        <p>Explore top-tier fashion, trending electronics, and elegant jewelry curated specifically for you.</p>
+        <a href="products.html" class="hero-btn">
+          Explore Catalog →
+        </a>
+      </section>
+
+      <!-- Features Strip -->
+      <section class="features-strip">
+        <div class="feature-box">
+          <div class="feature-icon">🚚</div>
+          <div>
+            <h4>Free Express Shipping</h4>
+            <p>Fast delivery on orders over ₹499</p>
+          </div>
+        </div>
+        <div class="feature-box">
+          <div class="feature-icon">🔒</div>
+          <div>
+            <h4>100% Secure Checkout</h4>
+            <p>Encrypted demo transactions</p>
+          </div>
+        </div>
+        <div class="feature-box">
+          <div class="feature-icon">🔄</div>
+          <div>
+            <h4>7-Day Free Returns</h4>
+            <p>Hassle-free replacement policy</p>
+          </div>
+        </div>
+        <div class="feature-box">
+          <div class="feature-icon">⭐</div>
+          <div>
+            <h4>Verified Reviews</h4>
+            <p>Authentic feedback from real buyers</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Category Shortcuts -->
+      <section style="margin-bottom: 2.5rem;">
+        <div class="section-header">
+          <h2>Shop by Category</h2>
+          <p class="section-subtitle">Pick from our most popular departments</p>
+        </div>
+        <div class="category-pills">
+          <a href="products.html" class="category-pill active">All Categories</a>
+          <a href="products.html?category=men's%20clothing" class="category-pill">Men's Clothing</a>
+          <a href="products.html?category=women's%20clothing" class="category-pill">Women's Clothing</a>
+          <a href="products.html?category=jewelery" class="category-pill">Jewelery</a>
+          <a href="products.html?category=electronics" class="category-pill">Electronics</a>
+        </div>
+      </section>
+
+      <!-- Featured Products -->
+      <section>
+        <div class="section-header">
+          <div class="section-title-row">
+            <div>
+              <h2>Featured Products</h2>
+              <p class="section-subtitle">Handpicked bestselling items trending this week</p>
+            </div>
+            <a href="products.html" class="btn btn-outline btn-sm">View All Products →</a>
+          </div>
+        </div>
+
+        <div class="product-grid" id="featured-products-container">
+          <!-- Dynamically populated by script.js -->
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-top">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>🛍️ ShopVibe</h3>
+          <p>Your premier online storefront for fashion, accessories, and electronics powered by the Fake Store API.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">All Products</a></li>
+            <li><a href="cart.html">View Cart</a></li>
+            <li><a href="checkout.html">Checkout</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Categories</h4>
+          <ul>
+            <li><a href="products.html?category=electronics">Electronics</a></li>
+            <li><a href="products.html?category=jewelery">Jewelery</a></li>
+            <li><a href="products.html?category=men's%20clothing">Men's Fashion</a></li>
+            <li><a href="products.html?category=women's%20clothing">Women's Fashion</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h4>Demo Store</h4>
+          <p>📍 Frontend Practice Project</p>
+          <p>📞 +91 98765 43210</p>
+          <p>✉️ support@shopvibe-demo.com</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        © 2026 ShopVibe. Built with HTML5, CSS3 &amp; Vanilla JavaScript. Fake Store API Demo.
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+

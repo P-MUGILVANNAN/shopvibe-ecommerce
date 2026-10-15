@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout - ShopVibe</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo">
+        🛍️ Shop<span>Vibe</span>
+      </a>
+
+      <button class="nav-toggle" id="nav-toggle-btn" aria-label="Toggle navigation">
+        ☰
+      </button>
+
+      <ul class="nav-links" id="nav-links-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li class="cart-link-wrapper">
+          <a href="cart.html" class="cart-icon-btn">
+            🛒 Cart <span class="cart-badge" id="nav-cart-count">0</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <div class="container">
+
+      <!-- Breadcrumbs -->
+      <nav class="breadcrumb">
+        <a href="index.html">Home</a>
+        <span>/</span>
+        <a href="cart.html">Cart</a>
+        <span>/</span>
+        <span>Checkout</span>
+      </nav>
+
+      <div class="section-header">
+        <h2>Secure Checkout</h2>
+        <p class="section-subtitle">Please enter your shipping address and confirm your demo order</p>
+      </div>
+
+      <div class="checkout-layout">
+
+        <!-- Checkout Form Column -->
+        <div class="checkout-card">
+          <h3>1. Shipping Information</h3>
+          <form id="checkout-form" novalidate>
+            <div class="form-grid">
+
+              <div class="form-group full-width">
+                <label for="cust-name" class="form-label">Full Name <span class="required">*</span></label>
+                <input type="text" id="cust-name" class="form-input" placeholder="e.g. John Doe" required>
+                <span class="field-error" id="cust-name-error">Please enter your full name (at least 2 letters).</span>
+              </div>
+
+              <div class="form-group">
+                <label for="cust-email" class="form-label">Email Address <span class="required">*</span></label>
+                <input type="email" id="cust-email" class="form-input" placeholder="e.g. john@example.com" required>
+                <span class="field-error" id="cust-email-error">Please enter a valid email address.</span>
+              </div>
+
+              <div class="form-group">
+                <label for="cust-phone" class="form-label">Phone Number <span class="required">*</span></label>
+                <input type="tel" id="cust-phone" class="form-input" placeholder="e.g. 9876543210" required>
+                <span class="field-error" id="cust-phone-error">Please enter a valid 10-digit phone number.</span>
+              </div>
+
+              <div class="form-group full-width">
+                <label for="cust-address" class="form-label">Street Address <span class="required">*</span></label>
+                <input type="text" id="cust-address" class="form-input" placeholder="House number, apartment, street" required>
+                <span class="field-error" id="cust-address-error">Please provide your complete shipping address.</span>
+              </div>
+
+              <div class="form-group">
+                <label for="cust-city" class="form-label">City <span class="required">*</span></label>
+                <input type="text" id="cust-city" class="form-input" placeholder="e.g. Chennai" required>
+                <span class="field-error" id="cust-city-error">Please enter your city.</span>
+              </div>
+
+              <div class="form-group">
+                <label for="cust-zip" class="form-label">Postal / ZIP Code <span class="required">*</span></label>
+                <input type="text" id="cust-zip" class="form-input" placeholder="e.g. 600054" required>
+                <span class="field-error" id="cust-zip-error">Please enter a valid postal code.</span>
+              </div>
+
+            </div>
+
+            <h3 style="margin-top: 2rem;">2. Payment Method</h3>
+            <div class="payment-options">
+              <label class="payment-option">
+                <input type="radio" name="payment_method" value="Cash on Delivery" checked>
+                <div>
+                  <strong>Cash on Delivery (COD)</strong>
+                  <div style="font-size: 0.8rem; color: var(--text-muted);">Pay when your parcel arrives at your doorstep</div>
+                </div>
+              </label>
+
+              <label class="payment-option">
+                <input type="radio" name="payment_method" value="UPI / QR Code (Demo)">
+                <div>
+                  <strong>UPI / QR Code (Demo)</strong>
+                  <div style="font-size: 0.8rem; color: var(--text-muted);">Google Pay, PhonePe, Paytm (Instant Demo)</div>
+                </div>
+              </label>
+
+              <label class="payment-option">
+                <input type="radio" name="payment_method" value="Credit / Debit Card (Demo)">
+                <div>
+                  <strong>Credit / Debit Card (Demo)</strong>
+                  <div style="font-size: 0.8rem; color: var(--text-muted);">Visa, MasterCard, RuPay (Demo sandbox)</div>
+                </div>
+              </label>
+            </div>
+
+            <div class="demo-notice">
+              ℹ️ <strong>Demo Checkout:</strong> No real payments are processed. LocalStorage will record your sample order.
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block" style="margin-top: 1.5rem; padding: 1rem; font-size: 1rem;">
+              Place Order Now 🛍️
+            </button>
+          </form>
+        </div>
+
+        <!-- Order Summary Preview Column -->
+        <div class="checkout-card" style="position: sticky; top: 90px;">
+          <h3>Order Summary</h3>
+          
+          <div class="order-items-preview" id="checkout-items-list">
+            <!-- Injected by script.js -->
+          </div>
+
+          <div style="margin-top: 1rem;">
+            <div class="summary-row">
+              <span>Standard Shipping</span>
+              <span style="color: var(--success-color); font-weight: 600;">FREE</span>
+            </div>
+            <div class="summary-row">
+              <span>Demo Discount</span>
+              <span style="color: var(--success-color);">- ₹0</span>
+            </div>
+            <div class="summary-row total-row">
+              <span>Total Payable</span>
+              <span id="checkout-total-amount">₹0</span>
+            </div>
+          </div>
+
+          <div style="margin-top: 1.25rem; font-size: 0.8rem; color: var(--text-muted); text-align: center;">
+            🔒 256-bit SSL encrypted checkout practice simulation.
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Order Success Modal -->
+  <div class="modal-backdrop" id="order-success-modal">
+    <div class="modal-content">
+      <div class="success-icon-badge">✓</div>
+      <h2>Thank You for Your Order!</h2>
+      <p style="color: var(--text-muted); margin-top: 0.5rem;">
+        Hi <strong id="success-cust-name">Customer</strong>, your demo order has been placed successfully.
+      </p>
+
+      <div class="order-id-box">
+        Order ID: <strong id="success-order-id">ORD-000000</strong>
+      </div>
+
+      <div class="summary-row" style="margin-bottom: 1.5rem;">
+        <span>Amount Charged (Demo):</span>
+        <strong id="success-order-total" style="color: var(--primary-color);">₹0</strong>
+      </div>
+
+      <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.5rem;">
+        Your order details have been saved in <code>localStorage.getItem('ecommerce_orders')</code> and the cart has been cleared.
+      </p>
+
+      <a href="products.html" class="btn btn-primary btn-block">
+        Continue Shopping →
+      </a>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-top">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>🛍️ ShopVibe</h3>
+          <p>Your premier online storefront for fashion, accessories, and electronics powered by the Fake Store API.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">All Products</a></li>
+            <li><a href="cart.html">View Cart</a></li>
+            <li><a href="checkout.html">Checkout</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Categories</h4>
+          <ul>
+            <li><a href="products.html?category=electronics">Electronics</a></li>
+            <li><a href="products.html?category=jewelery">Jewelery</a></li>
+            <li><a href="products.html?category=men's%20clothing">Men's Fashion</a></li>
+            <li><a href="products.html?category=women's%20clothing">Women's Fashion</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h4>Demo Store</h4>
+          <p>📍 Frontend Practice Project</p>
+          <p>📞 +91 98765 43210</p>
+          <p>✉️ support@shopvibe-demo.com</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        © 2026 ShopVibe. Built with HTML5, CSS3 &amp; Vanilla JavaScript. Fake Store API Demo.
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+

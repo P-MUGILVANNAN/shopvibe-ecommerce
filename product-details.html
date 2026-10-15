@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Details - ShopVibe</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo">
+        🛍️ Shop<span>Vibe</span>
+      </a>
+
+      <button class="nav-toggle" id="nav-toggle-btn" aria-label="Toggle navigation">
+        ☰
+      </button>
+
+      <ul class="nav-links" id="nav-links-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li class="cart-link-wrapper">
+          <a href="cart.html" class="cart-icon-btn">
+            🛒 Cart <span class="cart-badge" id="nav-cart-count">0</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <div class="container">
+
+      <!-- Breadcrumbs -->
+      <nav class="breadcrumb">
+        <a href="index.html">Home</a>
+        <span>/</span>
+        <a href="products.html">Products</a>
+        <span>/</span>
+        <a href="products.html" id="details-breadcrumb-cat">Category</a>
+      </nav>
+
+      <!-- Product Details Container -->
+      <div id="product-details-container">
+        <!-- Rendered dynamically by script.js -->
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-top">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>🛍️ ShopVibe</h3>
+          <p>Your premier online storefront for fashion, accessories, and electronics powered by the Fake Store API.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">All Products</a></li>
+            <li><a href="cart.html">View Cart</a></li>
+            <li><a href="checkout.html">Checkout</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Categories</h4>
+          <ul>
+            <li><a href="products.html?category=electronics">Electronics</a></li>
+            <li><a href="products.html?category=jewelery">Jewelery</a></li>
+            <li><a href="products.html?category=men's%20clothing">Men's Fashion</a></li>
+            <li><a href="products.html?category=women's%20clothing">Women's Fashion</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h4>Demo Store</h4>
+          <p>📍 Frontend Practice Project</p>
+          <p>📞 +91 98765 43210</p>
+          <p>✉️ support@shopvibe-demo.com</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        © 2026 ShopVibe. Built with HTML5, CSS3 &amp; Vanilla JavaScript. Fake Store API Demo.
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
